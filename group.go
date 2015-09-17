@@ -1,19 +1,24 @@
 package stormpath
 
-import "net/url"
+import (
+	"net/url"
+	"time"
+)
 
 //Group represents a Stormpath Group
 //
 //See: http://docs.stormpath.com/rest/product-guide/#groups
 type Group struct {
-	Href        string `json:"href,omitempty"`
-	Name        string `json:"name"`
-	Description string `json:"description,omitempty"`
-	Status      string `json:"status,omitempty"`
-	CustomData  *link  `json:"customData,omitempty"`
-	Accounts    *link  `json:"accounts,omitempty"`
-	Tenant      *link  `json:"tenant,omitempty"`
-	Directory   *link  `json:"directory,omitempty"`
+	Href        string    `json:"href,omitempty"`
+	Name        string    `json:"name"`
+	Description string    `json:"description,omitempty"`
+	Status      string    `json:"status,omitempty"`
+	CustomData  *link     `json:"customData,omitempty"`
+	Accounts    *link     `json:"accounts,omitempty"`
+	Tenant      *link     `json:"tenant,omitempty"`
+	Directory   *link     `json:"directory,omitempty"`
+	CreatedAt   time.Time `json:"createdAt"`
+	ModifiedAt  time.Time `json:"modifiedAt"`
 }
 
 //Groups represent a paged result of groups

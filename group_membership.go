@@ -1,9 +1,15 @@
 package stormpath
 
+import (
+	"time"
+)
+
 type GroupMembership struct {
-	Href    string `json:"href,omitempty"`
-	Account link   `json:"account"`
-	Group   link   `json:"group"`
+	Href       string    `json:"href,omitempty"`
+	Account    link      `json:"account"`
+	Group      link      `json:"group"`
+	CreatedAt  time.Time `json:"createdAt"`
+	ModifiedAt time.Time `json:"modifiedAt"`
 }
 
 type GroupMemberships struct {

@@ -70,7 +70,7 @@ func NewAccountRef(href string) *AccountRef {
 //VerifyEmail verifies an email verification token associated with an account
 //
 //See: http://docs.stormpath.com/rest/product-guide/#account-verify-email
-func VerifyEmailTokens(token string) (*link, error) {
+func VerifyEmailToken(token string) (*link, error) {
 	l := &link{}
 	err := client.post(buildAbsoluteURL(BaseURL, "accounts/emailVerificationTokens", token), emptyPayload(), l)
 

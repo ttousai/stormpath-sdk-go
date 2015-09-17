@@ -1,18 +1,23 @@
 package stormpath
 
-import "net/url"
+import (
+	"net/url"
+	"time"
+)
 
 //Directory represents a Stormpath directory object
 //
 //See: http://docs.stormpath.com/rest/product-guide/#directories
 type Directory struct {
-	Href        string `json:"href,omitempty"`
-	Name        string `json:"name"`
-	Description string `json:"description,omitempty"`
-	Status      string `json:"status,omitempty"`
-	Accounts    *link  `json:"accounts,omitempty"`
-	Groups      *link  `json:"groups,omitempty"`
-	Tenant      *link  `json:"tenant,omitempty"`
+	Href        string    `json:"href,omitempty"`
+	Name        string    `json:"name"`
+	Description string    `json:"description,omitempty"`
+	Status      string    `json:"status,omitempty"`
+	Accounts    *link     `json:"accounts,omitempty"`
+	Groups      *link     `json:"groups,omitempty"`
+	Tenant      *link     `json:"tenant,omitempty"`
+	CreatedAt   time.Time `json:"createdAt"`
+	ModifiedAt  time.Time `json:"modifiedAt"`
 }
 
 //Directories represnets a paged result of directories

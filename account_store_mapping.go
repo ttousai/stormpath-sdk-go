@@ -1,15 +1,21 @@
 package stormpath
 
+import (
+	"time"
+)
+
 //AccountStoreMapping represents an Stormpath account store mapping
 //
 //See: http://docs.stormpath.com/rest/product-guide/#account-store-mappings
 type AccountStoreMapping struct {
-	Href                  string `json:"href,omitempty"`
-	ListIndex             *int   `json:"listIndex,omitempty"`
-	IsDefaultAccountStore *bool  `json:"isDefaultAccountStore,omitempty"`
-	IsDefaultGroupStore   *bool  `json:"isDefaultGroupStore,omitempty"`
-	Application           link   `json:"application"`
-	AccountStore          link   `json:"accountStore"`
+	Href                  string    `json:"href,omitempty"`
+	ListIndex             *int      `json:"listIndex,omitempty"`
+	IsDefaultAccountStore *bool     `json:"isDefaultAccountStore,omitempty"`
+	IsDefaultGroupStore   *bool     `json:"isDefaultGroupStore,omitempty"`
+	Application           link      `json:"application"`
+	AccountStore          link      `json:"accountStore"`
+	CreatedAt             time.Time `json:"createdAt"`
+	ModifiedAt            time.Time `json:"modifiedAt"`
 }
 
 //AccountStoreMappings represents a pages result of account store mappings

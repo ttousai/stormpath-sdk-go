@@ -2,16 +2,19 @@ package stormpath
 
 import (
 	"net/url"
+	"time"
 )
 
 //Tenant represents a Stormpath tennat see http://docs.stormpath.com/rest/product-guide/#tenants
 type Tenant struct {
-	Href         string `json:"href"`
-	Name         string `json:"name"`
-	Key          string `json:"key"`
-	CustomData   link   `json:"customData"`
-	Applications link   `json:"applications"`
-	Directories  link   `json:"directories"`
+	Href         string    `json:"href"`
+	Name         string    `json:"name"`
+	Key          string    `json:"key"`
+	CustomData   link      `json:"customData"`
+	Applications link      `json:"applications"`
+	Directories  link      `json:"directories"`
+	CreatedAt    time.Time `json:"createdAt"`
+	ModifiedAt   time.Time `json:"modifiedAt"`
 }
 
 //CurrentTenant returns the current tenant see http://docs.stormpath.com/rest/product-guide/#retrieve-the-current-tenant

@@ -14,17 +14,19 @@ import (
 //
 //See: http://docs.stormpath.com/rest/product-guide/#applications
 type Application struct {
-	Href                       string `json:"href,omitempty"`
-	Name                       string `json:"name"`
-	Description                string `json:"description,omitempty"`
-	Status                     string `json:"status,omitempty"`
-	Accounts                   *link  `json:"accounts,omitempty"`
-	Groups                     *link  `json:"groups,omitempty"`
-	Tenant                     *link  `json:"tenant,omitempty"`
-	PasswordResetTokens        *link  `json:"passwordResetTokens,omitempty"`
-	AccountStoreMappings       *link  `json:"accountStoreMappings,omitempty"`
-	DefaultAccountStoreMapping *link  `json:"defaultAccountStoreMapping,omitempty"`
-	DefaultGroupStoreMapping   *link  `json:"defaultGroupStoreMapping,omitempty"`
+	Href                       string    `json:"href,omitempty"`
+	Name                       string    `json:"name"`
+	Description                string    `json:"description,omitempty"`
+	Status                     string    `json:"status,omitempty"`
+	Accounts                   *link     `json:"accounts,omitempty"`
+	Groups                     *link     `json:"groups,omitempty"`
+	Tenant                     *link     `json:"tenant,omitempty"`
+	PasswordResetTokens        *link     `json:"passwordResetTokens,omitempty"`
+	AccountStoreMappings       *link     `json:"accountStoreMappings,omitempty"`
+	DefaultAccountStoreMapping *link     `json:"defaultAccountStoreMapping,omitempty"`
+	DefaultGroupStoreMapping   *link     `json:"defaultGroupStoreMapping,omitempty"`
+	CreatedAt                  time.Time `json:"createdAt"`
+	ModifiedAt                 time.Time `json:"modifiedAt"`
 }
 
 //Applications represents a paged result or applications
