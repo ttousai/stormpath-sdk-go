@@ -168,7 +168,7 @@ func handleResponseError(resp *http.Response, err error) error {
 		}
 
 		Logger.Printf("[ERROR] %s", spError)
-		return errors.New(spError.Message)
+		return spError
 	}
 	//No errors from the request execution
 	return nil
